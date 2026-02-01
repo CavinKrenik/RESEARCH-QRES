@@ -1,6 +1,6 @@
 ﻿# QRES Research Portal & Validation Dashboard
 
-![Neural Swarm Emergence](./src/assets/neural_swarm_emergence.gif)
+![Neural Swarm Emergence](./src/assets/consensus_evolution.gif)
 
 This repository hosts the **Live Validation Dashboard** and **Research Gate** for the [QRES project](https://doi.org/10.5281/zenodo.18261441).
 
