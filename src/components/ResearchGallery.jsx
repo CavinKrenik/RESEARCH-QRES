@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react'
 
-import fig1 from '../assets/fig1_attack_rejection.png'
-import fig2 from '../assets/fig2_three_scenarios.png'
-import fig3 from '../assets/fig3_tolerance_curve.png'
-import fig4 from '../assets/fig4_temporal_evolution.png'
+import fig1 from '@/assets/fig1_attack_rejection.png'
+import fig2 from '@/assets/fig2_three_scenarios.png'
+import fig3 from '@/assets/fig3_tolerance_curve.png'
+import fig4 from '@/assets/fig4_temporal_evolution.png'
 
 const panels = [
   {

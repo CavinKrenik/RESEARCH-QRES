@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Copy, Check, FileText, ExternalLink } from 'lucide-react'
-import { papers, toBibTeX, citationCFF } from '../data/citation'
+import { papers, toBibTeX, citationCFF } from '@/data/citation'
 
 export default function CitationBlock() {
   const [copied, setCopied] = useState(null)

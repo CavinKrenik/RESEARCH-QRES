@@ -4,7 +4,7 @@ import { BarChart3, Layers, Zap } from 'lucide-react'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, Cell,
 } from 'recharts'
-import results from '../data/v16_results.json'
+import results from '@/data/v16_results.json'
 
 const DATASETS = [...new Set(results.map((r) => r.dataset))]
 const COLORS = {

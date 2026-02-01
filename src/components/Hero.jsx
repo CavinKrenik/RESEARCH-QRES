@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ChevronDown, Cpu, Network, Shield } from 'lucide-react'
-import consensusGif from '../assets/consensus_evolution.gif'
+import consensusGif from '@/assets/consensus_evolution.gif'
 
 const typewriter = {
   hidden: { opacity: 0 },

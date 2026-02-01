@@ -5,10 +5,10 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
   LineChart, Line,
 } from 'recharts'
-import { attackScenarios, toleranceCurve } from '../data/robustnessData'
+import { attackScenarios, toleranceCurve } from '@/data/robustnessData'
 
-import krumImg from '../assets/krum_defense.png'
-import toleranceImg from '../assets/tolerance_curve.png'
+import krumImg from '@/assets/krum_defense.png'
+import toleranceImg from '@/assets/tolerance_curve.png'
 
 export default function AttackLab() {
   const [selected, setSelected] = useState(3) // default to Coordinated Attack

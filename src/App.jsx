@@ -1,10 +1,10 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import ResearchGallery from './components/ResearchGallery'
-import SwarmDashboard from './components/SwarmDashboard'
-import AttackLab from './components/AttackLab'
-import BenchmarkCharts from './components/BenchmarkCharts'
-import CitationBlock from './components/CitationBlock'
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import ResearchGallery from '@/components/ResearchGallery'
+import SwarmDashboard from '@/components/SwarmDashboard'
+import AttackLab from '@/components/AttackLab'
+import BenchmarkCharts from '@/components/BenchmarkCharts'
+import CitationBlock from '@/components/CitationBlock'
 
 export default function App() {
   return (
@@ -36,6 +36,13 @@ export default function App() {
               className="text-text-dim hover:text-accent transition-colors"
             >
               DOI: 10.5281/zenodo.18261441
+            </a>
+            <span>·</span>
+            <a
+              href="mailto:cavinkrenik5@icloud.com"
+              className="text-text-dim hover:text-accent transition-colors"
+            >
+              Contact
             </a>
           </div>
         </div>

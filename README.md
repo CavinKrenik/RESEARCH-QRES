@@ -1,114 +1,62 @@
-﻿# QRES: Neural Swarm Operating System
+﻿# QRES: Deterministic Byzantine Fault Tolerance for Resource-Constrained Edge Learning
 
-[![v18.0](https://img.shields.io/badge/version-18.0-blue.svg)](https://github.com/CavinKrenik/QRES/releases)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18261441-blue)](https://doi.org/10.5281/zenodo.18261441)
-[![Paper](https://img.shields.io/badge/Paper-BFT%20for%20Edge%20Learning-green.svg)](https://doi.org/10.5281/zenodo.18446020)
-[![no_std](https://img.shields.io/badge/no_std-compatible-green.svg)](https://docs.rust-embedded.org/book/intro/no-std.html)
-[![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](LICENSE-MIT)
-[![Rust 2021](https://img.shields.io/badge/rust-2021-orange.svg)](https://www.rust-lang.org/)
+![Neural Swarm Emergence](./src/assets/neural_swarm_emergence.gif)
 
-**Architectural Scope:**  
-> QRES is intentionally narrow. Misuse will fail.  
-> Read **[SCOPE.md](./docs/SCOPE.md)** before deployment or evaluation.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18261441.svg)](https://doi.org/10.5281/zenodo.18261441)
+[![License](https://img.shields.io/badge/License-MIT%20OR%20Apache--2.0-blue.svg)](./package.json)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0008--9183--1278-green.svg)](https://orcid.org/0009-0008-9183-1278)
 
----
+**QRES** is a research-grade decentralized operating system designed for neural swarms in high-entropy edge environments. By leveraging purely deterministic execution and Lamarckian inheritance, QRES achieves robust consensus without the overhead of traditional heavy cryptographic proofs.
 
-## Emergent Intelligence in Action
+## ⚡ Core Impact Metrics
 
-![Neural Swarm Emergence](docs/images/neural_swarm_emergence.gif)
+| Metric | Improvement | Context |
+| :--- | :--- | :--- |
+| **Error Reduction** | **63x** | vs. Standard Federated Averaging (FedAvg) |
+| **Bandwidth Efficiency** | **250x** | via Neural Residual Prediction |
+| **BFT Tolerance** | **f < n/3** | Validated via Krum Defense |
+| **Execution** | **100% Deterministic** | `no_std` Rust Core |
 
-Visualizing a decentralized neural swarm recovering from a 15% packet loss interference zone. A single mutation propagates its evolved bytecode to heal the network through hardware-constrained gossip. This behavior emerges from network physics constraints, not central orchestration.
+## 🏗️ System Architecture
 
----
+QRES transforms chaotic edge networks into coherent intelligent swarms through:
+*   **SwarmNeuron Architecture**: Autonomous entropy detection and predictive bytecode evolution.
+*   **The Hippocampus**: Persistent evolution layer allowing strategies to survive rigid reboots.
+*   **Deterministic Consensus**: Bit-perfect state synchronization suitable for safety-critical IoT.
 
-## Executive Summary
+## 📚 Research & Validation
 
-QRES is a decentralized operating system for **Edge AI Swarms**. It solves the "Consensus vs. Bandwidth" dilemma by replacing floating-point math with deterministic fixed-point arithmetic (`Q16.16`) and exchanging small "Evolved Genes" instead of massive gradient models.
+This repository hosts the live validation dashboard and research artifacts for the QRES project.
 
-**v18.0 Benchmark Highlights:**
-- **Compression:** Custom Static Laplace Range Coder achieves **1.40x compression**, beating ZSTD (1.39x) on prediction residuals while maintaining bit-perfect determinism.
-- **Efficiency:** Swarms converge **12x faster** (wall-clock) than Federated Learning on constrained IoT networks (56kbps), consuming **99% less bandwidth**.
-- **Scalability:** Secure Aggregation proven linearly scalable (O(N)) for trusted peers. 🛡️ **Byzantine Fault Tolerance**: Deterministic I16F16 Krum aggregation guarantees bit-perfect outlier rejection across mixed-architecture swarms (ARM/ESP32/x86).
+*   **[Research Papers](./research/papers)**: Full technical specifications and academic publications.
+*   **[Live Dashboard](./src/components/SwarmDashboard.jsx)**: React-based visualization of swarm internal states.
+*   **[Attack Lab](./src/components/AttackLab.jsx)**: Simulation environment for Byzantine fault scenarios.
 
-The system is architected as three interlocking layers:
+## 🔗 Citation
 
-1. **The Body (`qres_core`):** A `no_std` Rust library for deterministic inference and fragmentation.
-2. **The Mind (`swarm_sim`):** An ECS-based simulator demonstrating emergent healing behavior.
-3. **The Hippocampus:** A persistent storage layer enabling Lamarckian evolution across reboots.
+If you use QRES in your research, please cite the following:
 
----
-
-## Why QRES?
-
-- **Consensus-first math:** Q16.16 fixed-point removes cross-arch float drift, keeping 1,000 heterogeneous devices in deterministic lockstep.
-- **Bandwidth as the bottleneck:** By shrinking updates to kilobyte genes, swarms converge faster in wall-clock time on LoRa/NB-IoT even if they need more epochs.
-- **Swarm-scale parallelism:** Parallelism lives at the node level (many daemons), while each node stays single-threaded for determinism (see docs/adrs/ADR-004-concurrency-model.md).
-- **End-to-end resilience:** MTU-aware gene gossip and persistence mean mutations survive drops and reboots; see docs/CLOUD_BENCHMARK_RESULTS.md for measured gains.
-
----
-
-## ⚡ Verified Performance (Azure Cloud v18.0)
-
-![Scalability Chart](docs/images/scalability_chart.png)
-
-| Metric | Result | vs. Baseline | Verified On |
-| :--- | :--- | :--- | :--- |
-| **Scalability** | **10,000 Nodes** (100% Success) | **20x** Scale | Azure Standard_D2s (2 vCPU) |
-| **Compression** | **31.8x** (SmoothSine) | **1.5x** Neural Gain | Azure Standard_F2s |
-| **Memory** | **< 1 KB / Node** | **O(1)** Overhead | Rust `no_std` Runtime |
-
-> *Benchmarks verified on January 16, 2026 using automated Azure CI/CD pipelines. See [docs/BENCHMARKS.md](docs/BENCHMARKS.md) for full results.*
-
----
-
-## Key Features
-
-### The Body: Deterministic Core
-
-Located in `crates/qres_core/`, this is a `no_std` Rust library implementing:
-
-- **Q16.16 Fixed-Point Arithmetic**: Eliminates floating-point drift across x86, ARM, and WASM platforms.
-- **Deterministic Compression**: All prediction errors use integer math, making behavior reproducible across devices.
-- **SwarmNeuron Trait**: Abstract interface for neural processors with signature methods: `predict()`, `check_surprise()`, `adapt()`, `export_gene()`, `install_gene()`.
-- **LinearNeuron Implementation**: 8-lag linear predictor with entropy tracking and refractory periods.
-- **Regime Switching**: Automatic transition between Calm, Storm, and Adapting states based on entropy thresholds.
-
-See: [API Reference](docs/API_REFERENCE.md) | [Specification](docs/SPEC.md)
-
-### The Mind: Emergent Swarm Simulator
-
-Located in `tools/swarm_sim/`, this Bevy-based 3D simulator demonstrates:
-
-- **Living Brain Visualization**: 150 nodes forming a force-directed spherical network with organic physics.
-- **Interactive Camera**: Mouse-drag to orbit, scroll to zoom, spacebar for auto-rotation.
-- **Noise Zone Physics**: A moving interference zone that induces storms and forces mutations.
-- **Gene Gossip Protocol**: Panicked (Red) nodes request cure genes from evolved (Purple) neighbors.
-- **Dense Neural Web**: Real-time connection visualization with color-coded synapse activity.
-- **HUD Metrics**: Live display of node counts, entropy, synapses, and packet traffic.
-- **Reset Function**: Press R to clear saved genes and restart evolution from scratch.
-- **Cinematic Rendering**: HDR bloom, TonyMcMapface tonemapping, pulsing evolved nodes.
-
-See: [Theory of Emergence](docs/theory/THEORY.md) | [P2P Implementation](docs/guides/P2P_IMPLEMENTATION.md)
-
-### The Hippocampus: Persistent Memory
-
-Located in `crates/qres_core/src/cortex/storage.rs`, this layer provides:
-
-- **GeneStorage Trait**: Abstract persistence interface, `no_std` compatible.
-- **DiskGeneStorage Implementation**: Saves evolved genes to `./swarms_memory/` directory.
-- **Auto-Loading on Spawn**: Nodes check disk for saved genes on initialization; if found, spawn as evolved.
-- **Periodic Persistence**: Every 5 seconds, calm evolved nodes save their bytecode to disk.
-- **Lamarckian Evolution**: Learned strategies survive simulation restarts.
-
-### 🛡️ Byzantine Fault Tolerance (Active Defense)
-
-QRES uses deterministic I16F16 Krum aggregation to reject malicious updates. In this verified test scenario, a malicious node attempted to poison the model with extreme values (`100.0`), pulling the Naive Mean to `~20.8`.
-
-**QRES Krum correctly identified and rejected the outlier**, maintaining consensus at `1.0`.
-
-![BFT Defense Visualization](Figure_1.png)
-
+```bibtex
+@software{Krenik_QRES_2026,
+  author = {Krenik, Cavin},
+  title = {{QRES: A Decentralized Operating System for Neural Swarms}},
+  version = {v18.0.0},
+  year = {2026},
+  doi = {10.5281/zenodo.18261441},
+  url = {https://doi.org/10.5281/zenodo.18261441},
+  orcid = {0009-0008-9183-1278}
+}
 ```
+
+## 📜 License
+
+Distributed under the MIT or Apache-2.0 license.
+
+## 📧 Contact
+
+For research collaborations or inquiries:
+**Cavin Krenik** - [cavinkrenik5@icloud.com](mailto:cavinkrenik5@icloud.com)
+
 🛡️ BFT DEFENSE ACTIVE: Malicious outlier rejected
    Mean (Compromised):  [20.79, 20.81]
    Krum (Protected):    [1.00, 1.00]
@@ -335,5 +283,6 @@ This paper formalizes the theoretical foundation of QRES, identifying a structur
 ---
 
 **Status**: Stable. Version 18.0 (Neural Swarm Architecture) complete. The pivot from deterministic compression to emergent swarms is verified in simulation. Ready for edge deployment.
-#   R E S E A R C H - Q R E S  
+#   R E S E A R C H - Q R E S 
+ 
  
